@@ -7,7 +7,7 @@
 </head>
 <body>
     <script>
-        fetch("https://emad-transporttest.great-site.net/api/index.php/").then(Request => Request.json()).then(
+        fetch("https://emad-transporttest.great-site.net/api/index.php/", {mode: 'no-cors'}).then(Request => Request.json()).then(
             data => console.log(data)
         )
     </script>
