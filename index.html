@@ -7,9 +7,14 @@
 </head>
 <body>
     <script>
-        fetch("https://emad-transporttest.great-site.net/api/index.php" ,{ mode: 'no-cors'}).then(Request => Request.json()).then(
-            data => console.log(data)
-        )
+        // استخدم بروكسي CORS للطلب
+        const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+        const apiUrl = 'http://emad-transporttest.great-site.net/api/index.php';
+
+        fetch(proxyUrl + apiUrl)
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error('Error fetching data:', error));
     </script>
 </body>
 </html>
