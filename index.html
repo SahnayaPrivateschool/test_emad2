@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استدعاء البيانات من الـ API</title>
+</head>
+<body>
+    <h1>بيانات المستخدمين</h1>
+    <ul id="users-list"></ul>
+
+    <script>
+        fetch("https://emad-transporttest.great-site.net/api/index.php/" ,{ mode: 'no-cors'}) // استدعاء الـ API
+            .then(response => response.json())
+            .then(data => {
+                const usersList = document.getElementById("users-list");
+                data.forEach(user => {
+                    const listItem = document.createElement("li");
+                    listItem.textContent = $;{user.id}; $;{user.name};
+                    usersList.appendChild(listItem);
+                });
+            })
+            .catch(error => console.error("حدث خطأ:", error));
+    </script>
+</body>
+</html>
